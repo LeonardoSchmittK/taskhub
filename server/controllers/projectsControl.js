@@ -5,8 +5,10 @@ const User = models.User;
 const Task = models.Task;
 
 function removeDuplicates(array) {
-  return array.filter((value, index, self) => {
-    return self.findIndex(item => item._id.toString() === value._id.toString()) === index;
+  const seen = new Map();
+  return array.filter((item) => {
+    const key = JSON.stringify(item);
+    return seen.has(key) ? false : seen.set(key, true);
   });
 }
 
@@ -26,16 +28,16 @@ const listProjects = async (req, res) => {
       .populate("owner")
       .populate("members")
       .populate("managers");
-      const populateTasks = async (projects) => {
-        for (const project of projects) {
-          const tasks = await Task.find({ project: project._id }).populate(
-            "user"
-          );
-          project.tasks = tasks;
-        }
-      };
+    const populateTasks = async (projects) => {
+      for (const project of projects) {
+        const tasks = await Task.find({ project: project._id }).populate(
+          "user"
+        );
+        project.tasks = tasks;
+      }
+    };
 
-      await populateTasks(projects);
+    await populateTasks(projects);
     const modifiedProjects = projects.map((project) => ({
       ...project._doc,
       owner: project.owner._doc,
@@ -47,7 +49,7 @@ const listProjects = async (req, res) => {
     }));
     res.json(modifiedProjects);
   } catch (err) {
-    console.log(err)
+    console.log(err);
     res.status(500).json({ message: err.message });
   }
 };
@@ -116,4 +118,5 @@ module.exports = {
   createProject,
   updateProject,
   deleteProject,
+  removeDuplicates,
 };

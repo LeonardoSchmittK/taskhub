@@ -2,20 +2,20 @@
 
 **nome do sistema**
 
-*versão x.x*
+_versão x.x_
 
 ## Histórico das alterações
 
-   Data    | Versão |    Descrição   | Autor(a)
------------|--------|----------------|-----------------
-dd/mm/aaaa |  x.x   | Release incial | Danielle Farias
-
+| Data       | Versão | Descrição      | Autor(a)        |
+| ---------- | ------ | -------------- | --------------- |
+| dd/mm/aaaa | x.x    | Release incial | Danielle Farias |
 
 ## 1 - Introdução
 
-Este documento descreve os requisitos a testar, os  tipos de testes definidos para cada iteração, os recursos de hardware e software a serem empregados e o cronograma dos testes ao longo do projeto. As seções referentes aos requisitos, recursos e cronograma servem para permitir ao gerente do projeto acompanhar a evolução dos testes.
+Este documento descreve os requisitos a testar, os tipos de testes definidos para cada iteração, os recursos de hardware e software a serem empregados e o cronograma dos testes ao longo do projeto. As seções referentes aos requisitos, recursos e cronograma servem para permitir ao gerente do projeto acompanhar a evolução dos testes.
 
 Com esse documento, você deve:
+
 - Identificar informações de projeto existentes e os componentes de software que devem ser testados.
 - Listar os Requisitos a testar.
 - Recomendar e descrever as estratégias de teste a serem empregadas.
@@ -34,23 +34,22 @@ Caso seja necessário, liste aqui os requisitos a testar subdivididos em casos d
 
 ### Casos de uso:
 
-Identificador do caso de uso | Nome do caso de uso
------------------------------|---------------------
-id UC1                       |       nome UC1
-id UC2                       |       nome UC2
+| Identificador do caso de uso | Nome do caso de uso |
+| ---------------------------- | ------------------- |
+| id UC1                       | nome UC1            |
+| id UC2                       | nome UC2            |
 
 ### Requisitos não-funcionais:
 
-Identificador do requisito   | Nome do requisito
------------------------------|---------------------
-id req1                      |      nome req1
-id req2                      |      nome req2
-
+| Identificador do requisito | Nome do requisito |
+| -------------------------- | ----------------- |
+| id req1                    | nome req1         |
+| id req2                    | nome req2         |
 
 ## 3 - Tipos de teste
 
 Esta seção deve conter os tipos de testes escolhidos para cada iteração do projeto.
-Pode-se definir inicialmente apenas os tipos de testes que serão usadas na próxima iteração, mas é possível também já registrar eventuais tipos de teste que se espera utilizar nas demais iterações. 
+Pode-se definir inicialmente apenas os tipos de testes que serão usadas na próxima iteração, mas é possível também já registrar eventuais tipos de teste que se espera utilizar nas demais iterações.
 Com base no guia de testes, indique os tipos de testes que melhor se adéquam aos requisitos, tipo da aplicação e seus recursos disponíveis e, caso necessário complemente ou forneça mais detalhes da técnica e dos critérios de completude sugeridos no guia para cada tipo de teste indicado.
 
 - Teste de interface de usuário;
@@ -61,7 +60,7 @@ Com base no guia de testes, indique os tipos de testes que melhor se adéquam ao
 - Teste de instalação;
 - Entre outros.
 
-### 3.1 - Métodos da Classe 
+### 3.1 - Métodos da Classe
 
 Para teste de funcionalidade.
 Aqui deve-se verificar se cada classe retorna o esperado.
@@ -325,7 +324,6 @@ Se possível usar teste automatizado.
 </table>
 <br/>
 
-
 ## 4 - Recursos
 
 Esta seção deve descrever os recursos humanos, de ambiente de teste (hardware e software) e de ferramentas de automatização de testes necessários para execução dos testes que devem ser descritos nas subseções que seguem.
@@ -333,17 +331,17 @@ Esta seção deve descrever os recursos humanos, de ambiente de teste (hardware 
 ### 4.1 - Ambiente de teste - Software e Hardware
 
 Descreva aqui o hardware e sua configuração, e o software. Por exemplo, o sistema operacional, browsers, servidor web, etc.
+
 ### 4.2 - Ferramenta de teste
 
 Descreva aqui as ferramentas específicas de teste usadas no projeto.
 
-
 ## 5 - Cronograma
 
-Tipo de teste      | Duração | data de início | data de término
--------------------|---------|----------------|-----------------
-planejar teste     |         | dd/mm/aaaa     | dd/mm/aaaa
-projetar teste     |         | dd/mm/aaaa     | dd/mm/aaaa
-implementar teste  |         | dd/mm/aaaa     | dd/mm/aaaa
-executar teste     |         | dd/mm/aaaa     | dd/mm/aaaa
-avaliar teste      |         | dd/mm/aaaa     | dd/mm/aaaa
+| Tipo de teste     | Duração | data de início | data de término |
+| ----------------- | ------- | -------------- | --------------- |
+| planejar teste    |         | dd/mm/aaaa     | dd/mm/aaaa      |
+| projetar teste    |         | dd/mm/aaaa     | dd/mm/aaaa      |
+| implementar teste |         | dd/mm/aaaa     | dd/mm/aaaa      |
+| executar teste    |         | dd/mm/aaaa     | dd/mm/aaaa      |
+| avaliar teste     |         | dd/mm/aaaa     | dd/mm/aaaa      |

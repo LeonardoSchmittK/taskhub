@@ -3,17 +3,16 @@ const express = require("express");
 const cors = require("cors");
 const connectDB = require("./utils/connector");
 const cookieParser = require("cookie-parser");
-const swaggerUi = require('swagger-ui-express');
-const YAML = require('yamljs');
+const swaggerUi = require("swagger-ui-express");
+const YAML = require("yamljs");
 
-const swaggerDocument = YAML.load('./docs/auth.yaml'); // O caminho para o seu arquivo YAML
-
+const swaggerDocument = YAML.load("./docs/auth.yaml"); // O caminho para o seu arquivo YAML
 
 const app = express();
 const PORT = process.env.PORT || 8000;
 
 connectDB();
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(
   cors({
@@ -36,8 +35,6 @@ const usersRoute = require("./routers/user");
 const authRoute = require("./routers/auth");
 const commentsRoute = require("./routers/comments");
 
-
-
 app.use("/", landingpageRoute);
 // app.use("/columns", columnsRoute);
 app.use("/projects", projectsRoute);
@@ -53,8 +50,8 @@ app.use((err, req, res, next) => {
   res.status(statusCode).json({ success: false, statusCode, message });
 });
 
-
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
+module.exports = app;
