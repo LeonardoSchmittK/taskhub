@@ -47,7 +47,7 @@ const updateUser = async (req, res) => {
     const updatedUser = await User.findByIdAndUpdate(
       req.params.id,
       {
-        is_admin: req.body.is_admin
+        is_admin: req.body.is_admin,
       },
       { new: true }
     );

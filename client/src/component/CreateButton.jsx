@@ -12,7 +12,6 @@ const CreateButton = ({ form, btnText }) => {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
-  
 
   return (
     <div>

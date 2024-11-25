@@ -18,7 +18,7 @@ const DashboardHeader = ({ projects, onProjectChange, onUserChange }) => {
   }));
 
   const [selectedProject, setSelectedProject] = useState();
-  
+
   useEffect(() => {
     if (selectedProject) {
       const selectedProjectObj = projects.find(
@@ -91,11 +91,13 @@ const DashboardHeader = ({ projects, onProjectChange, onUserChange }) => {
           />
         </div>
         <div className="ml-auto">
-          <CreateButton
-            form={<TaskForm onSubmit={onSubmit} />}
-            btnText="Create Task"
-            className="ml-auto"
-          ></CreateButton>
+          <div data-cy="criarTarefa">
+            <CreateButton
+              form={<TaskForm onSubmit={onSubmit} />}
+              btnText="Create Task"
+              className="ml-auto "
+            ></CreateButton>
+          </div>
         </div>
       </div>
     </header>

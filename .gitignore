@@ -30,3 +30,5 @@ venv
 
 # Contentlayer
 .contentlayer
+
+*/node_modules

@@ -4,7 +4,6 @@ import apiService from "../services/api";
 import { API_URLS } from "../services/server-urls";
 import Select from "react-select";
 
-
 const fetchUsers = async (setUsers) => {
   try {
     const response = await apiService.get(API_URLS.users);
@@ -38,12 +37,19 @@ const ProjectForm = ({ onSubmit, project = null }) => {
     e.preventDefault();
     const managedIds = managers.map((user) => user.value);
     const memberIds = members.map((user) => user.value);
-    onSubmit({ name, description, owner, project, managers: managedIds, members: memberIds });
+    onSubmit({
+      name,
+      description,
+      owner,
+      project,
+      managers: managedIds,
+      members: memberIds,
+    });
     setName("");
     setDescription("");
     setOwner("");
   };
-  
+
   const FormattedUsers = users.map((option) => ({
     value: option.id,
     label: option.name,
@@ -58,6 +64,7 @@ const ProjectForm = ({ onSubmit, project = null }) => {
         <input
           className="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
           id="name"
+          data-cy="inputNameProject"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -123,6 +130,7 @@ const ProjectForm = ({ onSubmit, project = null }) => {
       <Button
         className="px-2 py-1 bg-gray-800 text-white rounded-lg"
         type="submit"
+        id="createProject"
       >
         {project ? "Edit Project" : "Create Project"}
       </Button>

@@ -3,8 +3,8 @@ import KanbanBoard from "../component/kanbanBoard";
 import apiService from "../services/api";
 import { API_URLS } from "../services/server-urls";
 import DashboardHeader from "../component/DashboardHeader";
-import { DndProvider } from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend'
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import { useParams, useNavigate } from "react-router-dom";
 
 const fetchUsers = async (setUsers, selectedProject) => {
@@ -29,7 +29,9 @@ const fetchProjects = async (setProjects) => {
 
 const Dashboard = () => {
   const { projectId } = useParams();
-  const [selectedProject, setSelectedProject] = useState(projectId ? (projectId): (''));
+  const [selectedProject, setSelectedProject] = useState(
+    projectId ? projectId : ""
+  );
   const [projects, setProjects] = useState([]);
   const [selectedUser, setSelectedUser] = useState([]);
   const [users, setUsers] = useState([]);

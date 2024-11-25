@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import CreateButton from "../component/CreateButton";
 import EditButton from "../component/EditButton";
 import ProjectForm from "../forms/projectForm";
@@ -90,7 +90,8 @@ const Projects = () => {
         <CreateButton
           form={<ProjectForm onSubmit={onSubmit} />}
           btnText="Create Project"
-          className="ml-auto"
+          className=" ml-auto"
+          id="createProject"
         ></CreateButton>
       </div>
       <div className="mt-4">

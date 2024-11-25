@@ -90,9 +90,11 @@ export default function Header() {
           to="/signin"
           className="self-centered font-semibold dark:text-white"
         >
-          <Button className="px-2 py-1 bg-gray-800 text-white rounded-lg">
-            Sign In
-          </Button>
+          <div data-cy="botaoSignIn">
+            <Button className="px-2 py-1 bg-gray-800 text-white rounded-lg">
+              Sign In
+            </Button>
+          </div>
         </Link>
       )}
       <Navbar.Toggle />

@@ -29,7 +29,7 @@ const SignInPage = () => {
       [e.target.name]: e.target.value,
     });
   };
-  const { loading, error: Message } = useSelector(state => state.user);
+  const { loading, error: Message } = useSelector((state) => state.user);
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
@@ -76,6 +76,7 @@ const SignInPage = () => {
 
           <div className="mb-4">
             <label
+              data-cy="escreverEmail"
               htmlFor="email"
               className="block text-sm font-medium text-gray-600"
             >
@@ -118,6 +119,7 @@ const SignInPage = () => {
           </div>
           <Button
             type="submit"
+            id="increverse"
             className="px-2 py-1 bg-gray-800 text-white rounded-lg"
           >
             Sign In
