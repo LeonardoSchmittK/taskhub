@@ -40,7 +40,9 @@ export default function Header() {
               <Link to="/dashboard">Dashboard</Link>
             </Navbar.Link>
             <Navbar.Link active={path === "/projects"} as={"div"}>
-              <Link to="/projects">Projects</Link>
+              <Link data-cy="projectsAnchor" to="/projects">
+                Projects
+              </Link>
             </Navbar.Link>
             <Navbar.Link active={path === "/about"} as={"div"}>
               <Link to="/about">About</Link>

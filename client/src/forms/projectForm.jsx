@@ -79,6 +79,7 @@ const ProjectForm = ({ onSubmit, project = null }) => {
           Description
         </label>
         <textarea
+          data-cy="inputDescriptionProject"
           className="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
           id="description"
           value={description}
@@ -91,6 +92,7 @@ const ProjectForm = ({ onSubmit, project = null }) => {
           Owner
         </label>
         <select
+          data-cy="ownerProject"
           className="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
           id="owner"
           value={owner}
@@ -105,7 +107,7 @@ const ProjectForm = ({ onSubmit, project = null }) => {
           ))}
         </select>
       </div>
-      <div className="mb-4">
+      <div className="mb-4" data-cy="managersProject">
         <label className="block text-gray-700 font-bold mb-2" htmlFor="members">
           Managers
         </label>
@@ -114,9 +116,11 @@ const ProjectForm = ({ onSubmit, project = null }) => {
           options={FormattedUsers}
           onChange={setManagers}
           loadOptions={FormattedUsers}
+          id="selectManager"
         />
       </div>
-      <div className="mb-4">
+
+      <div className="mb-4" data-cy="membersProject">
         <label className="block text-gray-700 font-bold mb-2" htmlFor="members">
           Members
         </label>
@@ -127,13 +131,14 @@ const ProjectForm = ({ onSubmit, project = null }) => {
           loadOptions={FormattedUsers}
         />
       </div>
-      <Button
-        className="px-2 py-1 bg-gray-800 text-white rounded-lg"
-        type="submit"
-        id="createProject"
-      >
-        {project ? "Edit Project" : "Create Project"}
-      </Button>
+      <div data-cy="createProject">
+        <Button
+          className="px-2 py-1 bg-gray-800 text-white rounded-lg"
+          type="submit"
+        >
+          {project ? "Edit Project" : "Create Project"}
+        </Button>
+      </div>
     </form>
   );
 };

@@ -20,8 +20,5 @@ const API_BASE_URL =
   process.env.NODE_ENV == "production"
     ? "https://taskhub-s37f.onrender.com"
     : "http://localhost:8000";
-  
-export {
-  API_URLS,
-  API_BASE_URL
-};
+
+export { API_URLS, API_BASE_URL };

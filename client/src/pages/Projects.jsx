@@ -86,12 +86,11 @@ const Projects = () => {
   return (
     <div className="container mx-auto mt-8 px-16">
       <h1 className="text-3xl font-bold mb-4">Projects</h1>
-      <div className="flex justify-end">
+      <div className="flex justify-end" id="createProject">
         <CreateButton
           form={<ProjectForm onSubmit={onSubmit} />}
           btnText="Create Project"
-          className=" ml-auto"
-          id="createProject"
+          className="createProject ml-auto"
         ></CreateButton>
       </div>
       <div className="mt-4">
@@ -116,7 +115,10 @@ const Projects = () => {
               <tr key={project._id}>
                 <td className="border-b border-gray-200 py-4 px-4">
                   <Link to={`/dashboard/${project._id}`}>
-                    <h2 className="text-xl font-bold mb-2 block hover:underline">
+                    <h2
+                      data-cy="projectTitle"
+                      className="text-xl font-bold mb-2 block hover:underline"
+                    >
                       {project.name}
                     </h2>
                   </Link>
@@ -134,15 +136,18 @@ const Projects = () => {
                   </p>
                 </td>
                 <td className="border-b border-gray-200 py-4 px-4 grid grid-cols-2">
-                  <Button
-                    color="failure"
-                    className="flex items-center justify-center w-8 h-8"
-                    onClick={() => {
-                      handleDelete(project._id);
-                    }}
-                  >
-                    <AiOutlineDelete className="w-4 h-4" />
-                  </Button>
+                  <div data-cy="removeProjectButton">
+                    <Button
+                      color="failure"
+                      className="flex items-center justify-center w-8 h-8"
+                      onClick={() => {
+                        handleDelete(project._id);
+                      }}
+                    >
+                      <AiOutlineDelete className="w-4 h-4" />
+                    </Button>
+                  </div>
+
                   <EditButton
                     text={<AiOutlineEdit className="w-5 h-5 m-1" />}
                     form={

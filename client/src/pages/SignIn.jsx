@@ -95,6 +95,7 @@ const SignInPage = () => {
 
           <div className="mb-6">
             <label
+              data-cy="passwordInput"
               htmlFor="password"
               className="block text-sm font-medium text-gray-600"
             >
@@ -117,13 +118,14 @@ const SignInPage = () => {
               Sign Up
             </Link>
           </div>
-          <Button
-            type="submit"
-            id="increverse"
-            className="px-2 py-1 bg-gray-800 text-white rounded-lg"
-          >
-            Sign In
-          </Button>
+          <div data-cy="signInDivButton">
+            <Button
+              type="submit"
+              className="px-2 py-1 bg-gray-800 text-white rounded-lg"
+            >
+              Sign In
+            </Button>
+          </div>
           <OAuth />
           {Message && <Alert className="">{Message}</Alert>}
         </form>

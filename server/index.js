@@ -9,7 +9,7 @@ const YAML = require("yamljs");
 const swaggerDocument = YAML.load("./docs/auth.yaml"); // O caminho para o seu arquivo YAML
 
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = 8000;
 
 connectDB();
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
